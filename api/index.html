@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: aquamarine;
+        }
+        .id{
+            width: 400px;
+            height: 500px;
+            background-color: white;
+            border-radius: 20px;
+        }
+        img{
+            width: 200px;
+            align-items: center;
+            text-align: center;
+            margin: 10px 0 0 70px; 
+        }
+        h1{
+            margin: 10px 0 0 50px; 
+        }
+        h2{
+            margin: 10px 0 0 50px;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="id">
+        <div class="avatar">
+            <img src=" alt="" srcset="">
+        </div>
+        <h1>its</h1>
+        <h2></h2>
+    </div>
+    <p>fg</p>
+
+
+    <script>
+        const requestUrl = 'https://api.github.com/users/madhabAdhikary';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET',requestUrl)
+        xhr.onreadystatechange = function(){
+            console.log(xhr.readyState);
+            let data;
+
+            if(xhr.readyState === 4){
+                 data = JSON.parse(this.responseText);
+                 console.log(data);
+
+
+            }
+            let avvvatar = data.avatar_url;
+            document.querySelector('img').src = avvvatar;
+            document.querySelector('h1').innerText = data.name;
+            document.querySelector('h2').innerText = data.bio;
+           
+        }
+      
+        
+       
+        xhr.send()
+
+
+        console.log(console);
+    </script>
+</body>
+</html>
