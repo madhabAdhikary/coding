@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    fetch ('https://ronreiter-meme-generator.p.rapidapi.com/meme?top=Top%20Text&bottom=Bottom%20Text&meme=Condescending-Wonka&font_size=50&font=Impact')
+    .then((dara)=>{
+        return dara.json()
+    })
+    .then((info)=>{
+        console.log(info)
+    }).catch((error)=>{
+        console.log(error)
+    })
+    </script>
+</body>
+</html>
