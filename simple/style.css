@@ -1,4 +1,27 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+}
 
-.tl {
-   text-decoration: line-through;
+body{
+  background:#121212;
+  height:100vh;
+}
+
+/* Alert banner */
+.alert{
+  position:fixed;
+  top:20px;
+  left:50%;
+  transform:translateX(-50%);
+  min-width:300px;
+  padding:12px 16px;
+  background:#ff4d4d;
+  color:#fff;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 }

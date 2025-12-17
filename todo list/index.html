@@ -1,19 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo List</title>
-  <link rel="stylesheet" href="style.css">
-  
+  <title>Quiz App</title>
 </head>
 <body>
-  <div class="todo-container">
-    <h1>My Todo List</h1>
-    <input type="text" id="todo-input" placeholder="Add new task...">
-    <button id="add-btn">Add Todo</button>
-    <ul id="todo-list"></ul>
-  </div>
-  <script src="script.js"></script>
+
+  <h1>Quiz Questions</h1>
+  <button onclick="loadQuiz()">Load Quiz</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    function loadQuiz() {
+      fetch("http://localhost:3000/questions")
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("output").textContent =
+            JSON.stringify(data, null, 2);
+        })
+        .catch(err => console.log(err));
+    }
+  </script>
+
 </body>
 </html>
